@@ -1,0 +1,80 @@
+.post-header {
+  padding-top: $space-4;
+  padding-bottom: $space-2;
+  border-bottom: 1px solid $border;
+  margin-bottom: $space-3;
+}
+
+.post-title {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  margin: $space-1 0;
+}
+
+.post-tags {
+  display: flex;
+  gap: $space-1;
+  flex-wrap: wrap;
+  margin-top: $space-1;
+
+  span {
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $purple;
+    border: 1px solid rgba($purple, 0.4);
+    padding: 0.15em 0.5em;
+    border-radius: 2px;
+  }
+}
+
+.post-body {
+  padding-bottom: $space-5;
+  h2, h3 { margin-top: $space-4; color: $text; }
+  ul, ol  { padding-left: 1.3em; }
+}
+
+.site-footer {
+  border-top: 1px solid $border;
+  padding: $space-3 0 $space-4;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: $muted;
+  letter-spacing: 0.05em;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $space-1;
+  }
+
+  a { color: $muted; &:hover { color: $green; } }
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: $muted;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  &:hover, &:focus-visible { color: $green; }
+  svg { width: 13px; height: 13px; fill: currentColor; }
+}
+
+.post-back {
+  margin-top: $space-4;
+  padding-top: $space-2;
+  border-top: 1px solid $border;
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  a { color: $purple; text-decoration: none; &:hover { color: $green; } }
+}

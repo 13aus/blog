@@ -1,0 +1,22 @@
+---
+layout: default
+title: Writeups
+permalink: /writeups/
+---
+<header class="page-header container">
+  <p class="eyebrow">Archive</p>
+  <h1>Writeups</h1>
+  <p class="page-lede">Every machine writeup, CTF solve, and research post, newest first.</p>
+</header>
+
+{% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in by_year %}
+<div class="container">
+  <div class="section-head"><h2>{{ year.name }}</h2></div>
+</div>
+<section class="feed container">
+  {% for post in year.items %}
+    {% include post-card.html item=post %}
+  {% endfor %}
+</section>
+{% endfor %}

@@ -1,0 +1,8 @@
+{%- assign cat = include.item.categories[0] -%}
+{%- assign label = include.label | default: site.category_labels[cat] | default: cat | default: "Post" -%}
+<div class="card">
+  <span class="card-label">{{ label }}</span>
+  {% if include.item.date %}<p class="card-meta">{{ include.item.date | date: "%b %d, %Y" }}</p>{% endif %}
+  <h2 class="card-title"><a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a></h2>
+  <p class="card-excerpt"><span class="redact">{{ include.item.excerpt | strip_html | truncate: 140 }}</span></p>
+</div>

@@ -1,0 +1,53 @@
+title: "13aus"
+tagline: "somewhere between recon and root"
+description: >-
+  Offensive security writeups, research, and CPTS study notes from 13aus.
+  Machine walkthroughs from HackTheBox, TryHackMe, and HackSmarter.
+url: "https://13aus.github.io"
+baseurl: "/blog"
+
+author:
+  name: "13aus"
+  github: "13aus"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }
+  - scope: { path: "", type: "projects" }
+    values: { layout: "project" }
+
+# category key (in post front matter) -> label shown on cards
+category_labels:
+  htb:         "HackTheBox"
+  thm:         "TryHackMe"
+  hacksmarter: "HackSmarter"
+  ctf:         "CTF"
+  research:    "Research"
+  tool:        "Tooling"
+  notes:       "Notes"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - new-post.sh

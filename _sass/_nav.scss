@@ -1,0 +1,63 @@
+.site-header {
+  border-bottom: 1px solid $border;
+  padding: $space-2 0;
+  position: sticky;
+  top: 0;
+  background: rgba($bg, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
+}
+
+.site-mark {
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  color: $text;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  text-decoration: none;
+
+  .sig {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $green;
+    box-shadow: 0 0 6px $green;
+    animation: sig-pulse 3s ease-in-out infinite;
+    display: inline-block;
+  }
+}
+
+@keyframes sig-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px $green; }
+  50%       { opacity: 0.4; box-shadow: 0 0 14px $green; }
+}
+
+.site-nav {
+  display: flex;
+  gap: $space-3;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  a {
+    color: $muted;
+    text-decoration: none;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+
+    &:hover, &:focus-visible {
+      color: $purple;
+      text-shadow: 0 0 8px rgba($purple, 0.7), 0 0 20px rgba($purple, 0.3);
+    }
+  }
+}

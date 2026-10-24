@@ -1,0 +1,119 @@
+// ---- home hero -----------------------------------------------------------
+.hero {
+  min-height: 42vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $space-5 $space-3;
+  border-bottom: 1px solid $border;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-eyebrow {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $green;
+  text-shadow: 0 0 10px rgba($green, 0.4);
+  margin: 0 0 $space-2;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.2s forwards;
+}
+
+.hero-title {
+  font-family: $font-display;
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1;
+  margin: 0;
+  color: $green;
+  text-shadow:
+    0 0 10px rgba($green, 0.6),
+    0 0 30px rgba($green, 0.3),
+    0 0 60px rgba($purple, 0.2);
+  opacity: 0;
+  animation: fade-up 1s ease 0.4s forwards;
+
+  &::after {
+    content: "_";
+    animation: blink 1.1s step-end 1.6s infinite;
+    color: $purple;
+  }
+}
+
+.hero-tagline {
+  font-family: $font-body;
+  color: $muted;
+  max-width: 48ch;
+  font-size: 1rem;
+  margin: $space-2 0 0;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.8s forwards;
+
+  .green  { color: $green; }
+  .purple { color: $purple; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+// ---- inner page header (Writeups, Projects, About) ------------------------
+.page-header {
+  padding-top: $space-4;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid $border;
+
+  h1 {
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    line-height: 1;
+    margin: $space-1 0;
+    color: $green;
+    text-shadow: 0 0 10px rgba($green, 0.45), 0 0 40px rgba($purple, 0.18);
+  }
+
+  .page-lede {
+    color: $muted;
+    margin: 0;
+    max-width: 60ch;
+  }
+}
+
+// ---- section headings on the home page -----------------------------------
+.section-head {
+  margin-bottom: -#{$space-2};
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: $space-4;
+
+  h2 {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $muted;
+    margin: 0;
+  }
+
+  a {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $purple;
+    text-decoration: none;
+    &:hover { color: $green; }
+  }
+}

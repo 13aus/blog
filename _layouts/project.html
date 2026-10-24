@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header container">
+    <p class="eyebrow">Project &middot; {{ page.status | default: "In progress" }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="post-body container">
+    {{ content }}
+    <p class="post-back"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>
+  </div>
+</article>

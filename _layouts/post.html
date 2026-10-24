@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{%- assign cat = page.categories[0] -%}
+{%- assign label = site.category_labels[cat] | default: cat | default: "Post" -%}
+{%- assign words = content | number_of_words -%}
+{%- assign minutes = words | divided_by: 200.0 | ceil -%}
+<article>
+  <header class="post-header container">
+    <p class="eyebrow">{{ label }} &middot; {{ page.date | date: "%b %d, %Y" }} &middot; {{ minutes }} min read</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="post-body container">
+    {{ content }}
+    <p class="post-back"><a href="{{ '/writeups/' | relative_url }}">&larr; All writeups</a></p>
+  </div>
+</article>

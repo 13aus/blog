@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="hero-eyebrow">Offensive Security</p>
+  <h1 class="hero-title">13aus</h1>
+  <p class="hero-tagline">
+    somewhere between <span class="green">recon</span> and <span class="purple">root</span>
+  </p>
+</section>
+
+<div class="container">
+  <div class="section-head">
+    <h2>Latest writeups</h2>
+    <a href="{{ '/writeups/' | relative_url }}">View all &rarr;</a>
+  </div>
+</div>
+
+<section class="feed container">
+  {% for post in site.posts limit: 5 %}
+    {% include post-card.html item=post %}
+  {% endfor %}
+</section>

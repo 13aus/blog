@@ -1,0 +1,82 @@
+.feed {
+  padding-top: $space-4;
+  padding-bottom: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.card {
+  border: 1px solid $border;
+  background: $panel;
+  padding: $space-3;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  border-radius: $radius;
+
+  &:hover, &:focus-within {
+    border-color: $purple;
+    transform: translateX(2px);
+    box-shadow:
+      0 0 12px rgba($purple, 0.25),
+      0 0 30px rgba($green, 0.08),
+      inset 0 0 20px rgba($purple, 0.04);
+  }
+}
+
+.card-label {
+  position: absolute;
+  top: $space-2;
+  right: $space-2;
+  font-family: $font-mono;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: $green;
+  border: 1px solid $green;
+  padding: 0.2em 0.5em;
+  border-radius: 2px;
+  text-shadow: 0 0 6px rgba($green, 0.4);
+  opacity: 0.9;
+}
+
+.card-meta {
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: $muted;
+  text-transform: uppercase;
+  margin-bottom: $space-1;
+}
+
+.card-title {
+  margin: 0 0 $space-1;
+  font-size: 1.2rem;
+  padding-right: 7rem;
+
+  a {
+    text-decoration: none;
+    &:hover { color: $green; }
+  }
+}
+
+// redaction reveal — excerpt revealed on hover
+.card-excerpt {
+  color: #b8b8c8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.card-excerpt .redact {
+  background: #0a0a0f;
+  color: transparent;
+  border-radius: 2px;
+  transition: background 0.3s ease, color 0.15s ease 0.1s;
+  cursor: default;
+}
+
+.card:hover .card-excerpt .redact,
+.card:focus-within .card-excerpt .redact {
+  background: transparent;
+  color: inherit;
+}
+

@@ -1,0 +1,27 @@
+// ---- palette -------------------------------------------------------------
+$bg:          #0a0a0f;
+$panel:       #141420;
+$selection:   #1a1030;
+$green:       #39d353;
+$purple:      #9b5de5;
+$amber:       #f4a261;
+$text:        #d4d4c8;
+$muted:       #80809a;   // secondary text, readable on $bg
+$border:      #1a4a2e;
+$glow-green:  rgba(57, 211, 83, 0.18);
+$glow-purple: rgba(155, 93, 229, 0.18);
+
+// ---- type ----------------------------------------------------------------
+$font-display: "VT323", monospace;
+$font-body:    "Space Grotesk", system-ui, sans-serif;
+$font-mono:    "Fira Code", "Courier New", monospace;
+
+// ---- scale ---------------------------------------------------------------
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2.5rem;
+$space-5: 4rem;
+
+$max-width: 780px;
+$radius: 3px;
